@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crack It!</title>
+
+    <style>
+        body {
+            background: url(cyber-hacker-attack-background-skull-free-vector.jpg);
+            background-repeat: no-repeat;
+            background-size:cover;
+            background-attachment: fixed;
+        }
+
+        div {
+            height: 500px;
+            text-align: center;
+           margin-top: 300px;
+        }
+
+        input {
+
+            width: 500px;
+            height: 60px;
+            background-color: black;
+            color: white;
+            font-size: 2rem;
+            text-align: center;
+        }
+        button {
+            width: 400px;
+            height: 60px;
+            background-color: orangered;
+            color: white;
+            font-size: 2rem;
+            text-align: center;
+            cursor: pointer;
+            margin-top: 0.4rem;
+            border-radius: 1rem;
+        }
+        h1{
+            color: white;
+            font-size: 3rem;
+            background-color: red;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <input id="value" type="password"> <br>
+        <button id="btn" onclick="handle()">ENTER</button> <br>
+        <h1 id="yer"></h1>
+    </div>
+    
+    <script>
+
+        // let letINtervar = setInterval()
+        
+        function handle() {
+             
+            clearInterval(durmk)
+            let value = document.getElementById("value").value;
+            var yer = document.getElementById("yer");
+            yer.style.backgroundColor = "red";
+
+            var value_dizi = value.split("");
+            var allThings = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+                'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 1, 2, 3, 4, 5, 6, 7, 8, 9, 0,]
+            console.log(value_dizi)
+
+            var key = "";
+            var i = 0;
+            var k = 0;
+            yer.textContent = key;
+            var durmk = setInterval(()=>{
+                if(value_dizi[i] == allThings[k]){
+                    key += allThings[k];
+                    i++;
+                    k = 0;
+                    yer.textContent = key+allThings[k]
+                }
+                else{
+                    k++;
+                    yer.textContent = key+allThings[k]
+                    console.log(key+allThings[k])
+                }
+                if(key == value){
+                    clearInterval(durmk)
+                    yer.style.backgroundColor = "green";
+                }
+                console.log(key)
+            },10)
+        }
+
+    </script>
+
+</body>
+
+</html>
